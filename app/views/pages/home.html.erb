@@ -9,11 +9,10 @@
 }
 </STYLE>
 
-<p style="text-align:center;">
-<%= image_tag('mtkoz.jpg', width: '45%') %></p>
-
-<h1 align="middle">Welcome to Rebecca's blog!</h1>
-<h3 align="middle"><%= link_to 'About Rebecca', about_path %></h3>
+<div class="center jumbotron">
+  <h1 align="middle">Welcome to Rebecca's blog!</h1>
+  <h3 align="middle"><%= link_to 'About Rebecca', about_path, class: "about_link" %></h3>
+</div>
 <table style="width:65%" align="center">
   <tr>
     <td>

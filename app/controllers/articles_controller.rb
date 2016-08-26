@@ -14,10 +14,9 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      flash[:notice] = "Your article was updated."
+      flash[:success] = "Your article was updated."
       redirect_to article_path(@article)
     else # There were validations that failed.
-      flash[:notice] = "There were validation errors!"
       render :edit
     end
   end
@@ -25,10 +24,9 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      flash[:notice] = "Your article was created."
+      flash[:success] = "Your article was created."
       redirect_to article_path(@article)
     else # There were validations that failed.
-      flash[:notice] = "There were validation errors!"
       render :new
     end
   end
@@ -38,7 +36,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    flash[:notice] = "Article was successfully deleted."
+    flash[:danger] = "Article was successfully deleted."
     redirect_to articles_path
 
   end
